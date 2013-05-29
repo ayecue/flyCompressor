@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Demo</title>
+	</head>
+	<body>
+		<?php
+			//Include test config
+			include('config.php');
+			
+			//Set Directory and HTTP location
+			StaticCompressor::setDirectory(ROOT);
+			StaticCompressor::setHTTP(HTTP);
+			
+			//Load all JS files
+			StaticCompressor::loadJSFile(array(
+				'js/DOMAssistantComplete-2.8.1',
+				'js/selector.engine.js',
+				'js/sizzle'
+			));
+			
+			//Output compressed javascript
+			echo StaticCompressor::getJSScript();
+		?>
+	</body>
+</html>
